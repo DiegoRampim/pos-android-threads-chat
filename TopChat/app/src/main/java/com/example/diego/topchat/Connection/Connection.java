@@ -1,9 +1,9 @@
-package com.example.diego.chatup.Connection;
+package com.example.diego.topchat.Connection;
 
 import android.os.Handler;
 import android.os.Message;
 
-import com.example.diego.chatup.Interface.ConnectionListener;
+import com.example.diego.topchat.Interfaces.ConnectionListener;
 
 import org.json.JSONObject;
 
@@ -58,6 +58,8 @@ public class Connection extends Thread{
                     String string = new String(arrayBytes);
 
                     JSONObject jsonObject = new JSONObject(string);
+
+                    jsonObject.put("sender", "1");
 
                     Message message = new Message();
                     message.obj = jsonObject;
